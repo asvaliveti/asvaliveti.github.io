@@ -3,22 +3,42 @@ import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import Contact from './pages/contact';
 import Involvements from "./pages/involvements";
-import {AppBar, Button, Grid} from "@mui/material";
+import {AppBar, Button, Grid, Typography} from "@mui/material";
 
 function App() {
-  const navigate = useNavigate();
-  return (
+    const navigate = useNavigate();
+    document.body.style = 'background: #171717;';
+
+    const appBarText = {
+        fontWeight: 700,
+        color: "#EDEDED",
+        fontFamily: "Helvetica"
+    }
+
+    return (
       <div>
-        <AppBar position={"static"} >
-          <Grid container direction={"row"} justifyContent={"center"}>
+        <AppBar position={"static"} style={{backgroundColor: "#171717"}} elevation={0}>
+          <Grid container direction={"row"} justifyContent={"center"} spacing={4}>
             <Grid item>
-              <Button onClick={() => navigate('/involvements')} sx={{color: "#FFFFFF"}}>Involvements</Button>
+              <Button onClick={() => navigate('/involvements')}>
+                  <Typography sx={appBarText} >
+                      Involvements
+                  </Typography>
+              </Button>
             </Grid>
             <Grid item>
-              <Button onClick={() => navigate('/home')} sx={{color: "#FFFFFF"}}>Home</Button>
+              <Button onClick={() => navigate('/home')}>
+                  <Typography sx={appBarText} >
+                      Home
+                  </Typography>
+              </Button>
             </Grid>
             <Grid item>
-              <Button onClick={() => navigate('/contact')} sx={{color: "#FFFFFF"}}>Contact</Button>
+              <Button onClick={() => navigate('/contact')}>
+                  <Typography sx={appBarText} >
+                      Contact
+                  </Typography>
+              </Button>
             </Grid>
           </Grid>
         </AppBar>
