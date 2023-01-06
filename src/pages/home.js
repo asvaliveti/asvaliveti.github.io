@@ -5,6 +5,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
+import Slide from '@mui/material/Slide';
 
 const styles = {
     titleText: {
@@ -58,14 +59,20 @@ function Home() {
         <div>
             <Grid container sx={{height: "100%", width: "100%"}} alignItems={"center"} justifyContent={"center"}>
                 <Grid item xs={12} mt={25}>
-                    <Typography sx={styles.titleText} align={"center"}>Hey, I'm Anirudh!</Typography>
+                    <Slide direction={"down"} in={true}>
+                        <Typography sx={styles.titleText} align={"center"}>Hey, I'm Anirudh!</Typography>
+                    </Slide>
                 </Grid>
                 <Grid item xs={12} mt={2}>
-                    <Typography sx={styles.subTitle} align={"center"}>Computer Science student @ UW-Madison</Typography>
+                    <Slide direction={"down"} in={true}>
+                        <Typography sx={styles.subTitle} align={"center"}>Computer Science student @ UW-Madison</Typography>
+                    </Slide>
                 </Grid>
                 <Grid item mt={12}>
                     <Grid container direction={"row"} justifyContent={"center"}>
-                        { renderSocials() }
+                        <Slide direction={"up"} in={true}>
+                            { renderSocials() }
+                        </Slide>
                     </Grid>
                 </Grid>
             </Grid>
