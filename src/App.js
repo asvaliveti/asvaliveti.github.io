@@ -25,16 +25,6 @@ function App() {
     document.body.style = 'background: #171717;';
 
     const navigate = useNavigate();
-    const [open, setOpen] = useState(true);
-
-
-    // const handleOpen = () => {
-    //     setOpen(true);
-    // }
-
-    const handleClose = () => {
-        setOpen(false);
-    }
 
     return (
       <div>
@@ -63,20 +53,10 @@ function App() {
             </Grid>
           </Grid>
         </AppBar>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          sx={styles.modal}
-        >
-          <Box >
-              <Typography sx={{top: "50%", left: "50%"}}>
-                  Site still under construction
-              </Typography>
-          </Box>
-        </Modal>
         <Routes>
           <Route path="/involvements" element={<Involvements />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/" element={<Home />}>
             <Route index element={<Home />} />
             <Route path="*" element={<Home />} />
