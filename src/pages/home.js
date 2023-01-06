@@ -1,5 +1,5 @@
 import React from "react";
-import {AppBar, Button, Grid, Typography} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 function Home() {
     const titleText = {
@@ -11,11 +11,9 @@ function Home() {
 
     return (
         <div>
-            <Grid container direction={"column"} alignItems={"center"} justifyContent={"center"} sx={{height: "100%"}}>
-                <Grid item xs={12}>
-                    <Typography sx={titleText}>Hey, I'm Anirudh!</Typography>
-                </Grid>
-            </Grid>
+            <Box container alignItems={"center"} justifyContent={"center"}>
+                <Typography sx={titleText} alignItems={"center"} justifyContent={"center"}>Hey, I'm Anirudh!</Typography>
+            </Box>
         </div>
     );
 }

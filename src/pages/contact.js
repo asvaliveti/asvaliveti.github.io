@@ -7,6 +7,21 @@ import EmailIcon from '@mui/icons-material/Email';
 import IconButton from '@mui/material/IconButton';
 
 
+const styles = {
+    textFieldBackground: {
+        backgroundColor: "#EDEDED",
+        borderRadius: 4,
+        color: "#EDEDED",
+    },
+    buttonStyle: {
+        backgroundColor: "#DA0037",
+        color: "#EDEDED",
+        borderRadius: 10,
+    },
+    icons: {
+        color: "#EDEDED",
+    }
+}
 
 function Contact() {
 
@@ -18,22 +33,6 @@ function Contact() {
         console.log(messageText);
         let link = "mailto:asvaliveti@gmail.com?subject=&body=Email: " + email + " Hello, My name is " + name + ". " + messageText;
         window.location.replace(link);
-    }
-
-    const textFieldBackground = {
-        backgroundColor: "#EDEDED",
-        borderRadius: 4,
-        color: "#EDEDED",
-    }
-
-    const buttonStyle = {
-        backgroundColor: "#DA0037",
-        color: "#EDEDED",
-        borderRadius: 10,
-    }
-
-    const icons = {
-        color: "#EDEDED",
     }
 
     const renderTypography = () => {
@@ -55,22 +54,22 @@ function Contact() {
                 <Grid container direction={"row"} spacing={1}>
                     <Grid item>
                         <IconButton onClick={() => window.location.replace("https://www.instagram.com/ani_valiveti/")}>
-                            <InstagramIcon sx={icons}/>
+                            <InstagramIcon sx={styles.icons}/>
                         </IconButton>
                     </Grid>
                     <Grid item>
                         <IconButton onClick={() => window.location.replace("https://github.com/asvaliveti")}>
-                            <GitHubIcon sx={icons}/>
+                            <GitHubIcon sx={styles.icons}/>
                         </IconButton>
                     </Grid>
                     <Grid item>
                         <IconButton onClick={() => window.location.replace("https://www.linkedin.com/in/avaliveti")}>
-                            <LinkedInIcon sx={icons} />
+                            <LinkedInIcon sx={styles.icons} />
                         </IconButton>
                     </Grid>
                     <Grid item>
                         <IconButton onClick={() => window.location.replace("mailto:asvaliveti@gmail.com")}>
-                            <EmailIcon sx={icons} />
+                            <EmailIcon sx={styles.icons} />
                         </IconButton>
                     </Grid>
                 </Grid>
@@ -89,7 +88,7 @@ function Contact() {
                                 id={"Name"}
                                 label="Name"
                                 variant="outlined"
-                                sx={textFieldBackground}
+                                sx={styles.textFieldBackground}
                                 fullWidth
                                 onChange={e => setName(e.target.value)}
                             />
@@ -99,7 +98,7 @@ function Contact() {
                                 id={"Email"}
                                 label="Email"
                                 variant="outlined"
-                                sx={textFieldBackground}
+                                sx={styles.textFieldBackground}
                                 fullWidth
                                 onChange={e => setEmail(e.target.value)}
                             />
@@ -110,7 +109,7 @@ function Contact() {
                     <TextField
                         label="Message"
                         variant="outlined"
-                        sx={textFieldBackground}
+                        sx={styles.textFieldBackground}
                         fullWidth
                         rows={5}
                         multiline
@@ -118,7 +117,7 @@ function Contact() {
                     />
                 </Grid>
                 <Grid item>
-                    <Button sx={buttonStyle} onClick={ () => sendEmail() }>Send</Button>
+                    <Button sx={styles.buttonStyle} onClick={ () => sendEmail() }>Send</Button>
                 </Grid>
                 <Grid item>
                     { renderSocials() }

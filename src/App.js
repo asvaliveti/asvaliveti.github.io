@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom';
+import {Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import Contact from './pages/contact';
 import Involvements from "./pages/involvements";
@@ -28,9 +28,9 @@ function App() {
     const [open, setOpen] = useState(true);
 
 
-    const handleOpen = () => {
-        setOpen(true);
-    }
+    // const handleOpen = () => {
+    //     setOpen(true);
+    // }
 
     const handleClose = () => {
         setOpen(false);
