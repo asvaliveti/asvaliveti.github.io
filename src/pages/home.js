@@ -34,9 +34,7 @@ function Home() {
                 </Grid>
                 <Grid item mt={12}>
                     <Grid container direction={"row"} justifyContent={"center"}>
-                        <Slide direction={"up"} in={true}>
-                            <Socials />
-                        </Slide>
+                        <Socials />
                     </Grid>
                 </Grid>
             </Grid>
