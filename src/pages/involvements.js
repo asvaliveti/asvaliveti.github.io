@@ -1,6 +1,7 @@
 import React from "react";
 import {Button, Grid, Box, Card, CardContent, Typography} from "@mui/material";
 import Grow from '@mui/material/Grow';
+import Slide from '@mui/material/Slide';
 import Socials from "../widgets/socials";
 
 const styles = {
@@ -21,10 +22,30 @@ const styles = {
         backgroundColor: "#DA0037",
         color: "#EDEDED",
         borderRadius: 2,
+        '&:hover': {
+            backgroundColor: '#DA0037',
+            color: '#EDEDED',
+        },
+    },
+    headerText: {
+        color: "#EDEDED",
+        fontSize: 30,
+        fontWeight: 700
     },
 }
 
+
 function Involvements() {
+    const renderTitle = () => {
+        return (
+            <Grow in={true}>
+                <Slide direction={"down"} in={true}>
+                    <Typography sx={styles.headerText}>Projects I've Worked on</Typography>
+                </Slide>
+            </Grow>
+        );
+    }
+
     const renderCard = (imgUrl, title, body, linkUrl, hasLearnMore) => {
         return (
             <div>
@@ -77,9 +98,12 @@ function Involvements() {
 
     return (
         <div>
-            <Grid container direction={"column"} spacing={2} alignItems={"center"}>
+            <Grid container direction={"column"} spacing={2} alignItems={"center"} my={2}>
                 <Grid item>
-                    <Grid container direction={"row"} spacing={2} alignItems={"stretch"} mx={4} my={4}>
+                    { renderTitle() }
+                </Grid>
+                <Grid item>
+                    <Grid container direction={"row"} spacing={2} mx={4}>
                         <Grow in={true}>
                             <Grid item xs={3.75}>
                                 {
@@ -87,9 +111,9 @@ function Involvements() {
                                         "https://uploads-ssl.webflow.com/627ab31fc99a5eeafb7ccb03/62fad55f31855f517066582b_create-new-tag-laptop.png",
                                         "LifeTagger Inc.",
                                         "Throughout my 3+ years at the company, I worked on refurbishing the app design to modernize app theme, " +
-                                        "gathering API data to display COVID-19 statistics through the Community Page," +
-                                        "incorporating emergency resources for Hurricane Ida victims including options for users to donate to survivors, and" +
-                                        "optimizing development efficiency by incorporating the use of Flutter and React into iOS, Android, and Web interfaces. Recently, my work" +
+                                        "gathering API data to display COVID-19 statistics through the Community Page, " +
+                                        "incorporating emergency resources for Hurricane Ida victims including options for users to donate to survivors, and " +
+                                        "optimizing development efficiency by incorporating the use of Flutter and React into iOS, Android, and Web interfaces. Recently, my work " +
                                         "has shifted more towards incorporating the use of company sold NFC tags into mobile and web platforms both on the front and back end.",
                                         "https://www.lifetaggerapp.com/"
                                     )
@@ -102,8 +126,8 @@ function Involvements() {
                                     renderCard(
                                         "https://wa.wisc.edu/wp-content/uploads/2022/03/Screen-Shot-2022-03-08-at-1.39.09-PM.png",
                                         "Wisconsin Autonomous",
-                                        "As a part of the AutoDrive Challenge Series II developing a level 4 autonomous vehicle, Wisocnsin Autonomous is focussed on converting a standart Chevy Bolt EUV into" +
-                                        "a fully autonomous vehicle capable of avoiding obstaclees. At my short time so far, I implemented ROS2 into autonomous vehicle structure to integrate components through the vehicle, ensuring that path" +
+                                        "As a part of the AutoDrive Challenge Series II developing a level 4 autonomous vehicle, Wisconsin Autonomous is focussed on converting a standard Chevy Bolt EUV into " +
+                                        "a fully autonomous vehicle capable of avoiding obstacles. At my short time so far, I implemented ROS2 into autonomous vehicle structure to integrate components through the vehicle, ensuring that path " +
                                         "planning and rerouting can be done at will. Additionally, I developed high-level and low-level path planning and path following algorithms and implemented them into a Chevrolet Bolt EUV.",
                                         "https://wa.wisc.edu/"
                                     )
@@ -116,9 +140,9 @@ function Involvements() {
                                     renderCard(
                                         "https://www.lcps.org/cms/lib/VA01000195/Centricity/Domain/29793/IMG_8010.JPG",
                                         "RoboLoCo",
-                                        "Although I wasn't able to join the team until my last year of high-school, I became a part of the leadership team as the co-lead in a software role." +
+                                        "Although I wasn't able to join the team until my last year of high-school, I became a part of the leadership team as the co-lead in a software role. " +
                                         "What began by just recruiting and mentoring 80+ new students in the off-season, grew into competing at a high level in the chesapeake district " +
-                                        "of the FIRST Robotics Competition (FRC). Throughout the phase of the competitions, RoboLoCo was able to win the Engineering Inspiration award at the 2022" +
+                                        "of the FIRST Robotics Competition (FRC). Throughout the phase of the competitions, RoboLoCo was able to win the Engineering Inspiration award at the 2022 " +
                                         "district championships qualifying us for the world championship in Houston, TX.",
                                         "https://www.lcps.org/Domain/29793",
                                     )

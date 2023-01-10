@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import {Button, Grid, TextField, Typography} from "@mui/material";
+import Grow from '@mui/material/Grow';
+import Slide from '@mui/material/Slide';
 import Socials from "../widgets/socials";
 
 
@@ -13,6 +15,20 @@ const styles = {
         backgroundColor: "#DA0037",
         color: "#EDEDED",
         borderRadius: 10,
+        '&:hover': {
+            backgroundColor: '#DA0037',
+            color: '#EDEDED',
+        },
+    },
+    headerText: {
+        color: "#EDEDED",
+        fontSize: 30,
+        fontWeight: 700
+    },
+    subHeaderText: {
+        color: "#EDEDED",
+        fontSize: 20,
+        fontWeight: 400
     },
 }
 
@@ -31,62 +47,66 @@ function Contact() {
     const renderTypography = () => {
         return (
             <div>
-                <Grid item>
-                    <Typography sx={{color: "#EDEDED", fontSize: 30, fontWeight: 700 }}>Connect with me!</Typography>
-                    <Typography sx={{color: "#EDEDED", fontSize: 20, fontWeight: 400 }}>
-                        To collaborate, discuss, or debate sports
-                    </Typography>
-                </Grid>
+                <Slide direction={"down"} in={true} >
+                    <Grid item>
+                        <Typography sx={styles.headerText}>Connect with me!</Typography>
+                        <Typography sx={styles.subHeaderText}>
+                            To collaborate, discuss, or debate sports
+                        </Typography>
+                    </Grid>
+                </Slide>
             </div>
         )
     }
 
     return (
         <div>
-            <Grid container direction={"column"} alignItems={"center"} justifyContent={"center"} spacing={6} mt={4}>
-                { renderTypography() }
-                <Grid item sx={{width: "40%"}}>
-                    <Grid container direction={"row"} justifyContent={"space-between"}>
-                        <Grid item>
-                            <TextField
-                                id={"Name"}
-                                label="Name"
-                                variant="outlined"
-                                sx={styles.textFieldBackground}
-                                fullWidth
-                                onChange={e => setName(e.target.value)}
-                            />
-                        </Grid>
-                        <Grid item>
-                            <TextField
-                                id={"Email"}
-                                label="Email"
-                                variant="outlined"
-                                sx={styles.textFieldBackground}
-                                fullWidth
-                                onChange={e => setEmail(e.target.value)}
-                            />
+            <Grow in={true}>
+                <Grid container direction={"column"} alignItems={"center"} justifyContent={"center"} spacing={6} mt={4}>
+                    { renderTypography() }
+                    <Grid item sx={{width: "40%"}}>
+                        <Grid container direction={"row"} justifyContent={"space-between"}>
+                            <Grid item>
+                                <TextField
+                                    id={"Name"}
+                                    label="Name"
+                                    variant="outlined"
+                                    sx={styles.textFieldBackground}
+                                    fullWidth
+                                    onChange={e => setName(e.target.value)}
+                                />
+                            </Grid>
+                            <Grid item>
+                                <TextField
+                                    id={"Email"}
+                                    label="Email"
+                                    variant="outlined"
+                                    sx={styles.textFieldBackground}
+                                    fullWidth
+                                    onChange={e => setEmail(e.target.value)}
+                                />
+                            </Grid>
                         </Grid>
                     </Grid>
+                    <Grid item sx={{width: "40%"}}>
+                        <TextField
+                            label="Message"
+                            variant="outlined"
+                            sx={styles.textFieldBackground}
+                            fullWidth
+                            rows={5}
+                            multiline
+                            onChange={e => setMessageText(e.target.value)}
+                        />
+                    </Grid>
+                    <Grid item>
+                        <Button sx={styles.buttonStyle} onClick={ () => sendEmail() }>Send</Button>
+                    </Grid>
+                    <Grid item>
+                        <Socials />
+                    </Grid>
                 </Grid>
-                <Grid item sx={{width: "40%"}}>
-                    <TextField
-                        label="Message"
-                        variant="outlined"
-                        sx={styles.textFieldBackground}
-                        fullWidth
-                        rows={5}
-                        multiline
-                        onChange={e => setMessageText(e.target.value)}
-                    />
-                </Grid>
-                <Grid item>
-                    <Button sx={styles.buttonStyle} onClick={ () => sendEmail() }>Send</Button>
-                </Grid>
-                <Grid item>
-                    <Socials />
-                </Grid>
-            </Grid>
+            </Grow>
         </div>
     );
 }
