@@ -1,10 +1,6 @@
 import React, {useState} from "react";
 import {Button, Grid, TextField, Typography} from "@mui/material";
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import EmailIcon from '@mui/icons-material/Email';
-import IconButton from '@mui/material/IconButton';
+import Socials from "../widgets/socials";
 
 
 const styles = {
@@ -18,9 +14,6 @@ const styles = {
         color: "#EDEDED",
         borderRadius: 10,
     },
-    icons: {
-        color: "#EDEDED",
-    }
 }
 
 function Contact() {
@@ -46,35 +39,6 @@ function Contact() {
                 </Grid>
             </div>
         )
-    }
-
-    const renderSocials = () => {
-        return (
-            <div>
-                <Grid container direction={"row"} spacing={1}>
-                    <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://www.instagram.com/ani_valiveti/")}>
-                            <InstagramIcon sx={styles.icons}/>
-                        </IconButton>
-                    </Grid>
-                    <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://github.com/asvaliveti")}>
-                            <GitHubIcon sx={styles.icons}/>
-                        </IconButton>
-                    </Grid>
-                    <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://www.linkedin.com/in/avaliveti")}>
-                            <LinkedInIcon sx={styles.icons} />
-                        </IconButton>
-                    </Grid>
-                    <Grid item>
-                        <IconButton onClick={() => window.location.replace("mailto:asvaliveti@gmail.com")}>
-                            <EmailIcon sx={styles.icons} />
-                        </IconButton>
-                    </Grid>
-                </Grid>
-            </div>
-        );
     }
 
     return (
@@ -120,7 +84,7 @@ function Contact() {
                     <Button sx={styles.buttonStyle} onClick={ () => sendEmail() }>Send</Button>
                 </Grid>
                 <Grid item>
-                    { renderSocials() }
+                    <Socials />
                 </Grid>
             </Grid>
         </div>

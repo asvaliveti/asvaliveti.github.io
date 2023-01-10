@@ -1,0 +1,50 @@
+import React from 'react';
+import { Grid } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
+import ArticleIcon from "@mui/icons-material/Article";
+
+const styles = {
+    icons: {
+        color: "#EDEDED",
+    }
+}
+
+function Socials() {
+    return (
+        <div>
+            <Grid container direction={"row"} spacing={1}>
+                <Grid item>
+                    <IconButton onClick={() => window.location.replace("https://www.instagram.com/ani_valiveti/")}>
+                        <InstagramIcon sx={styles.icons}/>
+                    </IconButton>
+                </Grid>
+                <Grid item>
+                    <IconButton onClick={() => window.location.replace("https://github.com/asvaliveti")}>
+                        <GitHubIcon sx={styles.icons}/>
+                    </IconButton>
+                </Grid>
+                <Grid item>
+                    <IconButton onClick={() => window.location.replace("https://www.linkedin.com/in/avaliveti")}>
+                        <LinkedInIcon sx={styles.icons} />
+                    </IconButton>
+                </Grid>
+                <Grid item>
+                    <IconButton onClick={() => window.location.replace("mailto:asvaliveti@gmail.com")}>
+                        <EmailIcon sx={styles.icons} />
+                    </IconButton>
+                </Grid>
+                <Grid item>
+                    <IconButton onClick={() => window.location.replace("https://docs.google.com/document/d/1UOoBqENOhzxYrm_QKV5PEWb0nB9pD8nKEnBde5UK5ag/edit?usp=sharing")} >
+                        <ArticleIcon sx={styles.icons} />
+                    </IconButton>
+                </Grid>
+            </Grid>
+        </div>
+    );
+}
+
+export default Socials;

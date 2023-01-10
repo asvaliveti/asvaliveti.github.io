@@ -1,11 +1,7 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import EmailIcon from "@mui/icons-material/Email";
 import Slide from '@mui/material/Slide';
+import Socials from "../widgets/socials";
 
 const styles = {
     titleText: {
@@ -19,41 +15,9 @@ const styles = {
         fontWeight: 400,
         color: "#EDEDED"
     },
-    icons: {
-        color: "#EDEDED",
-    }
 }
 
 function Home() {
-
-    const renderSocials = () => {
-        return (
-            <div>
-                <Grid container direction={"row"} spacing={1}>
-                    <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://www.instagram.com/ani_valiveti/")}>
-                            <InstagramIcon sx={styles.icons}/>
-                        </IconButton>
-                    </Grid>
-                    <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://github.com/asvaliveti")}>
-                            <GitHubIcon sx={styles.icons}/>
-                        </IconButton>
-                    </Grid>
-                    <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://www.linkedin.com/in/avaliveti")}>
-                            <LinkedInIcon sx={styles.icons} />
-                        </IconButton>
-                    </Grid>
-                    <Grid item>
-                        <IconButton onClick={() => window.location.replace("mailto:asvaliveti@gmail.com")}>
-                            <EmailIcon sx={styles.icons} />
-                        </IconButton>
-                    </Grid>
-                </Grid>
-            </div>
-        );
-    }
 
     return (
         <div>
@@ -71,7 +35,7 @@ function Home() {
                 <Grid item mt={12}>
                     <Grid container direction={"row"} justifyContent={"center"}>
                         <Slide direction={"up"} in={true}>
-                            { renderSocials() }
+                            <Socials />
                         </Slide>
                     </Grid>
                 </Grid>
