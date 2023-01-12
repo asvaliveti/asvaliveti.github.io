@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import {Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import Contact from './pages/contact';
 import Involvements from "./pages/involvements";
-import {AppBar, Button, Grid, Typography, Box, Modal} from "@mui/material";
+import {AppBar, Button, Grid, Typography } from "@mui/material";
 
 const styles = {
     modal: {

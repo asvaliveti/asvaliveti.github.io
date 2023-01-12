@@ -29,7 +29,7 @@ function Home() {
                         <Typography sx={styles.titleText} align={"center"}>
                             <Typewriter
                                 options={{
-                                    strings: ['Hello, My name is Anirudh!', 'I love learning new things!', "Be sure to reach out!"],
+                                    strings: ['Hello, My name is Anirudh!', "Be sure to reach out!"],
                                     autoStart: true,
                                     loop: true,
                                 }}

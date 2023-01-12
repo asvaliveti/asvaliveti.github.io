@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Button, Grid, TextField, Typography} from "@mui/material";
+import { Button, Grid, TextField, Typography } from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
 import Socials from "../widgets/socials";
