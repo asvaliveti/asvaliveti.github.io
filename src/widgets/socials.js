@@ -19,27 +19,27 @@ function Socials() {
             <Slide direction={"up"} in={true}>
                 <Grid container direction={"row"} spacing={1}>
                     <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://www.instagram.com/ani_valiveti/")}>
+                        <IconButton onClick={() => window.open("https://www.instagram.com/ani_valiveti/")}>
                             <InstagramIcon sx={styles.icons}/>
                         </IconButton>
                     </Grid>
                     <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://github.com/asvaliveti")}>
+                        <IconButton onClick={() => window.open("https://github.com/asvaliveti")}>
                             <GitHubIcon sx={styles.icons}/>
                         </IconButton>
                     </Grid>
                     <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://www.linkedin.com/in/avaliveti")}>
+                        <IconButton onClick={() => window.open("https://www.linkedin.com/in/avaliveti")}>
                             <LinkedInIcon sx={styles.icons} />
                         </IconButton>
                     </Grid>
                     <Grid item>
-                        <IconButton onClick={() => window.location.replace("mailto:asvaliveti@gmail.com")}>
+                        <IconButton onClick={() => window.open("mailto:asvaliveti@gmail.com")}>
                             <EmailIcon sx={styles.icons} />
                         </IconButton>
                     </Grid>
                     <Grid item>
-                        <IconButton onClick={() => window.location.replace("https://docs.google.com/document/d/1UOoBqENOhzxYrm_QKV5PEWb0nB9pD8nKEnBde5UK5ag/edit?usp=sharing")} >
+                        <IconButton onClick={() => window.open("https://docs.google.com/document/d/1UOoBqENOhzxYrm_QKV5PEWb0nB9pD8nKEnBde5UK5ag/edit?usp=sharing")} >
                             <ArticleIcon sx={styles.icons} />
                         </IconButton>
                     </Grid>
