@@ -4,6 +4,8 @@ import Slide from '@mui/material/Slide';
 import Grow from '@mui/material/Grow'
 import Socials from "../widgets/socials";
 import Typewriter from "typewriter-effect";
+import GraphemeSplitter from "grapheme-splitter";
+
 
 const styles = {
     titleText: {
@@ -21,6 +23,11 @@ const styles = {
 
 function Home() {
 
+    const stringSplitter = string => {
+        const splitter = new GraphemeSplitter();
+        return splitter.splitGraphemes(string);
+    };
+
     return (
         <div>
             <Grow in={true}>
@@ -29,9 +36,14 @@ function Home() {
                         <Typography sx={styles.titleText} align={"center"}>
                             <Typewriter
                                 options={{
-                                    strings: ['Hello, My name is Anirudh!', "Be sure to reach out!"],
+                                    strings: ['Hello, My name is Anirudh!👋',
+                                        "Born in India🇮🇳, but lived in Germany🇩🇪, Russia🇷🇺, Ukraine🇺🇦, and the US🇺🇸",
+                                        "Be sure to reach out!"],
                                     autoStart: true,
                                     loop: true,
+                                    deleteSpeed: 15,
+                                    pauseFor: 1500,
+                                    stringSplitter
                                 }}
                             />
                         </Typography>
