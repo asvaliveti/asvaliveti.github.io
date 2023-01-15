@@ -4,6 +4,7 @@ import Home from './pages/home';
 import Contact from './pages/contact';
 import Involvements from "./pages/involvements";
 import {AppBar, Button, Grid, Typography } from "@mui/material";
+import ResumeViewer from "./pages/resumeViewer";
 
 const styles = {
     modal: {
@@ -57,6 +58,7 @@ function App() {
           <Route path="/involvements" element={<Involvements />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/resume" element={<ResumeViewer />} />
           <Route path="/" element={<Home />}>
             <Route index element={<Home />} />
             <Route path="*" element={<Home />} />

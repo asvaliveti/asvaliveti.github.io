@@ -39,7 +39,7 @@ function Socials() {
                         </IconButton>
                     </Grid>
                     <Grid item>
-                        <IconButton onClick={() => window.open("https://docs.google.com/document/d/1UOoBqENOhzxYrm_QKV5PEWb0nB9pD8nKEnBde5UK5ag/edit?usp=sharing")} >
+                        <IconButton onClick={() => window.location.replace("/resume")} >
                             <ArticleIcon sx={styles.icons} />
                         </IconButton>
                     </Grid>
