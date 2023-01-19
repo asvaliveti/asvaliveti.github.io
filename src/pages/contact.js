@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
@@ -37,6 +37,10 @@ function Contact() {
     const [messageText, setMessageText] = useState("");
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+
+    useEffect(() => {
+        document.title = "Contact | Anirudh Valiveti"
+    }, [])
 
     const sendEmail = () => {
         console.log(messageText);

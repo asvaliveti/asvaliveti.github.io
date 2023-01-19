@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Button, Grid, Box, Card, CardContent, Typography} from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
@@ -36,6 +36,10 @@ const styles = {
 
 
 function Involvements() {
+    useEffect(() => {
+        document.title = "Involvements | Anirudh Valiveti"
+    }, [])
+
     const renderTitle = () => {
         return (
             <Grow in={true}>

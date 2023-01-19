@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid, Typography } from "@mui/material";
 import Slide from '@mui/material/Slide';
 import Grow from '@mui/material/Grow'
@@ -22,6 +22,10 @@ const styles = {
 }
 
 function Home() {
+
+    useEffect(() => {
+        document.title = "Home | Anirudh Valiveti"
+    }, [])
 
     const stringSplitter = string => {
         const splitter = new GraphemeSplitter();

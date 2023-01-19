@@ -1,10 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import Contact from './pages/contact';
 import Involvements from "./pages/involvements";
 import {AppBar, Button, Grid, Typography } from "@mui/material";
-import ResumeViewer from "./pages/resumeViewer";
 
 const styles = {
     modal: {
@@ -24,6 +23,10 @@ const styles = {
 
 function App() {
     document.body.style = 'background: #171717;';
+
+    useEffect(() => {
+        document.title = "Anirudh Valiveti"
+    }, [])
 
     const navigate = useNavigate();
 
@@ -58,7 +61,6 @@ function App() {
           <Route path="/involvements" element={<Involvements />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/resume" element={<ResumeViewer />} />
           <Route path="/" element={<Home />}>
             <Route index element={<Home />} />
             <Route path="*" element={<Home />} />
