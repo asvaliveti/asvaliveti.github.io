@@ -91,7 +91,7 @@ function Contact() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item>
+                <Grid item xs={6}>
                     <TextField
                         label="Message"
                         variant="outlined"
