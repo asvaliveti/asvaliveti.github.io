@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import {Button, Grid, Box, Card, CardContent, Typography} from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
+import { isBrowser } from 'react-device-detect';
 const data = require("../involvementsData/data.json");
 
 const styles = {
@@ -107,19 +108,34 @@ function Involvements() {
                     { renderTitle() }
                 </Grid>
                 <Grid item>
-                    <Grid container direction={"row"} spacing={2} mx={4}>
-                        {
-                            data.involvements.map((involvement) => {
-                                return (
-                                    <Grow in={true}>
-                                        <Grid item xs={3.75}>
-                                            { renderCard(involvement.title, involvement.body, involvement.imgUrl, involvement.linkUrl) }
-                                        </Grid>
-                                    </Grow>
-                                )
-                            })
-                        }
-                    </Grid>
+                    {isBrowser ?
+                        <Grid container direction={"row"} spacing={2} mx={4}>
+                            {
+                                data.involvements.map((involvement) => {
+                                    return (
+                                        <Grow in={true}>
+                                            <Grid item xs={3.75}>
+                                                {renderCard(involvement.title, involvement.body, involvement.imgUrl, involvement.linkUrl)}
+                                            </Grid>
+                                        </Grow>
+                                    )
+                                })
+                            }
+                        </Grid> :
+                        <Grid container direction={"row"} spacing={2}>
+                            {
+                                data.involvements.map((involvement) => {
+                                    return (
+                                        <Grow in={true}>
+                                            <Grid item xs={12}>
+                                                {renderCard(involvement.title, involvement.body, involvement.imgUrl, involvement.linkUrl)}
+                                            </Grid>
+                                        </Grow>
+                                    )
+                                })
+                            }
+                        </Grid>
+                    }
                 </Grid>
             </Grid>
         </div>

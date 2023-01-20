@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
+import {isBrowser} from "react-device-detect";
 
 
 const styles = {
@@ -62,50 +63,102 @@ function Contact() {
         )
     }
 
+    const renderMobile = () => {
+        return (
+            <Grid container direction={"column"} alignItems={"center"} justifyContent={"center"} spacing={2} mt={4}>
+                { renderTypography() }
+                <Grid item>
+                    <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"} spacing={2}>
+                        <Grid item>
+                            <TextField
+                                id={"Name"}
+                                label="Name"
+                                variant="outlined"
+                                sx={styles.textFieldBackground}
+                                fullWidth
+                                onChange={e => setName(e.target.value)}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <TextField
+                                id={"Email"}
+                                label="Email"
+                                variant="outlined"
+                                sx={styles.textFieldBackground}
+                                fullWidth
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item>
+                    <TextField
+                        label="Message"
+                        variant="outlined"
+                        sx={styles.textFieldBackground}
+                        fullWidth
+                        rows={5}
+                        multiline
+                        onChange={e => setMessageText(e.target.value)}
+                    />
+                </Grid>
+                <Grid item>
+                    <Button sx={styles.buttonStyle} onClick={ () => sendEmail() }>Send</Button>
+                </Grid>
+            </Grid>
+        );
+    }
+
+    const renderWeb = () => {
+        return (
+            <Grid container direction={"column"} alignItems={"center"} justifyContent={"center"} spacing={6} mt={4}>
+                { renderTypography() }
+                <Grid item sx={{width: "40%"}}>
+                    <Grid container direction={"row"} justifyContent={"space-between"}>
+                        <Grid item>
+                            <TextField
+                                id={"Name"}
+                                label="Name"
+                                variant="outlined"
+                                sx={styles.textFieldBackground}
+                                fullWidth
+                                onChange={e => setName(e.target.value)}
+                            />
+                        </Grid>
+                        <Grid item>
+                            <TextField
+                                id={"Email"}
+                                label="Email"
+                                variant="outlined"
+                                sx={styles.textFieldBackground}
+                                fullWidth
+                                onChange={e => setEmail(e.target.value)}
+                            />
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item sx={{width: "40%"}}>
+                    <TextField
+                        label="Message"
+                        variant="outlined"
+                        sx={styles.textFieldBackground}
+                        fullWidth
+                        rows={5}
+                        multiline
+                        onChange={e => setMessageText(e.target.value)}
+                    />
+                </Grid>
+                <Grid item>
+                    <Button sx={styles.buttonStyle} onClick={ () => sendEmail() }>Send</Button>
+                </Grid>
+            </Grid>
+        );
+    }
+
     return (
         <div>
             <Grow in={true}>
-                <Grid container direction={"column"} alignItems={"center"} justifyContent={"center"} spacing={6} mt={4}>
-                    { renderTypography() }
-                    <Grid item sx={{width: "40%"}}>
-                        <Grid container direction={"row"} justifyContent={"space-between"}>
-                            <Grid item>
-                                <TextField
-                                    id={"Name"}
-                                    label="Name"
-                                    variant="outlined"
-                                    sx={styles.textFieldBackground}
-                                    fullWidth
-                                    onChange={e => setName(e.target.value)}
-                                />
-                            </Grid>
-                            <Grid item>
-                                <TextField
-                                    id={"Email"}
-                                    label="Email"
-                                    variant="outlined"
-                                    sx={styles.textFieldBackground}
-                                    fullWidth
-                                    onChange={e => setEmail(e.target.value)}
-                                />
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item sx={{width: "40%"}}>
-                        <TextField
-                            label="Message"
-                            variant="outlined"
-                            sx={styles.textFieldBackground}
-                            fullWidth
-                            rows={5}
-                            multiline
-                            onChange={e => setMessageText(e.target.value)}
-                        />
-                    </Grid>
-                    <Grid item>
-                        <Button sx={styles.buttonStyle} onClick={ () => sendEmail() }>Send</Button>
-                    </Grid>
-                </Grid>
+                { isBrowser ? renderWeb() : renderMobile() }
             </Grow>
         </div>
     );
