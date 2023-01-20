@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import {Button, Grid, Box, Card, CardContent, Typography} from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
-import Socials from "../widgets/socials";
 const data = require("../involvementsData/data.json");
 
 const styles = {
@@ -121,9 +120,6 @@ function Involvements() {
                             })
                         }
                     </Grid>
-                </Grid>
-                <Grid item mb={2}>
-                    <Socials />
                 </Grid>
             </Grid>
         </div>

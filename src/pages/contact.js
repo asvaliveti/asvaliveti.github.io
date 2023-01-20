@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
-import Socials from "../widgets/socials";
 
 
 const styles = {
@@ -105,9 +104,6 @@ function Contact() {
                     </Grid>
                     <Grid item>
                         <Button sx={styles.buttonStyle} onClick={ () => sendEmail() }>Send</Button>
-                    </Grid>
-                    <Grid item>
-                        <Socials />
                     </Grid>
                 </Grid>
             </Grow>

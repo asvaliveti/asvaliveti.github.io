@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Grid, Typography } from "@mui/material";
 import Slide from '@mui/material/Slide';
 import Grow from '@mui/material/Grow'
-import Socials from "../widgets/socials";
 import Typewriter from "typewriter-effect";
 import GraphemeSplitter from "grapheme-splitter";
 
@@ -56,11 +55,6 @@ function Home() {
                         <Slide direction={"down"} in={true}>
                             <Typography sx={styles.subTitle} align={"center"}>Computer Science student @ UW-Madison</Typography>
                         </Slide>
-                    </Grid>
-                    <Grid item mt={12}>
-                        <Grid container direction={"row"} justifyContent={"center"}>
-                            <Socials />
-                        </Grid>
                     </Grid>
                 </Grid>
             </Grow>

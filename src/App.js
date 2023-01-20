@@ -3,7 +3,8 @@ import {Route, Routes, useNavigate } from 'react-router-dom';
 import Home from './pages/home';
 import Contact from './pages/contact';
 import Involvements from "./pages/involvements";
-import {AppBar, Button, Grid, Typography } from "@mui/material";
+import {AppBar, Button, Grid, Typography, BottomNavigation } from "@mui/material";
+import Socials from "./widgets/socials";
 
 const styles = {
     modal: {
@@ -19,6 +20,9 @@ const styles = {
         color: "#EDEDED",
         fontFamily: "Helvetica"
     },
+    bottomNavigation: {
+        backgroundColor: "#171717"
+    }
 }
 
 function App() {
@@ -31,42 +35,55 @@ function App() {
     const navigate = useNavigate();
 
     return (
-      <div>
-        <AppBar position={"static"} style={{backgroundColor: "#171717"}} elevation={0}>
-          <Grid container direction={"row"} justifyContent={"center"} spacing={4}>
-            <Grid item>
-              <Button onClick={() => navigate('/involvements')}>
-                  <Typography sx={styles.appBarText} >
-                      Involvements
-                  </Typography>
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button onClick={() => navigate('/home')}>
-                  <Typography sx={styles.appBarText} >
-                      Home
-                  </Typography>
-              </Button>
-            </Grid>
-            <Grid item>
-              <Button onClick={() => navigate('/contact')}>
-                  <Typography sx={styles.appBarText} >
-                      Contact
-                  </Typography>
-              </Button>
-            </Grid>
+      <Grid container sx={{height: "100%"}} direction={"column"}>
+          <Grid item>
+            <AppBar position={"static"} style={{backgroundColor: "#171717"}} elevation={0}>
+              <Grid container direction={"row"} justifyContent={"center"} spacing={4}>
+                <Grid item>
+                  <Button onClick={() => navigate('/involvements')}>
+                      <Typography sx={styles.appBarText} >
+                          Involvements
+                      </Typography>
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button onClick={() => navigate('/home')}>
+                      <Typography sx={styles.appBarText} >
+                          Home
+                      </Typography>
+                  </Button>
+                </Grid>
+                <Grid item>
+                  <Button onClick={() => navigate('/contact')}>
+                      <Typography sx={styles.appBarText} >
+                          Contact
+                      </Typography>
+                  </Button>
+                </Grid>
+              </Grid>
+            </AppBar>
           </Grid>
-        </AppBar>
-        <Routes>
-          <Route path="/involvements" element={<Involvements />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-            <Route path="*" element={<Home />} />
-          </Route>
-        </Routes>
-      </div>
+          <Grid item>
+            <Routes>
+              <Route path="/involvements" element={<Involvements />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/" element={<Home />}>
+                <Route index element={<Home />} />
+                <Route path="*" element={<Home />} />
+              </Route>
+            </Routes>
+          </Grid>
+          <Grid item>
+              <BottomNavigation sx={styles.bottomNavigation}>
+                  <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"}>
+                      <Grid item>
+                          <Socials />
+                      </Grid>
+                  </Grid>
+              </BottomNavigation>
+          </Grid>
+      </Grid>
   );
 }
 
