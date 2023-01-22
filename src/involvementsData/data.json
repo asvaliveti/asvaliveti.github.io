@@ -2,7 +2,7 @@
   "involvements": [
     {
       "title": "LifeTagger Inc.",
-      "body": "Throughout my 3+ years at the company, I worked on refurbishing the app design to modernize app theme, gathering API data to display COVID-19 statistics through the Community Page, incorporating emergency resources for Hurricane Ida victims including options for users to donate to survivors, and optimizing development efficiency by incorporating the use of Flutter and React into iOS, Android, and Web interfaces. Recently, my work has shifted more towards incorporating the use of company sold NFC tags into mobile and web platforms both on the front and back end.",
+      "body": "LifeTagger is a proximity based tool that allows users to connect with the location surrounding them, strengthening customer engagement of several local businesses. My experience with the company over 4 years includes working with libraries such as React.js, Node.js, Android App Development, Flutter, and Parse Cloud in order to build solutions on the web, in mobile apps, and a backend server connecting it all together. Using these skills, I was able to not only increase customer engagement with registered companies, but also aid the victims of COVID-19 and Hurricane Ida with real-time statistics and relief resources.",
       "imgUrl" : "https://uploads-ssl.webflow.com/627ab31fc99a5eeafb7ccb03/62fad55f31855f517066582b_create-new-tag-laptop.png",
       "linkUrl": "https://www.lifetaggerapp.com/",
       "hasLearnMore": false

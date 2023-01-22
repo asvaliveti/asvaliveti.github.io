@@ -9,7 +9,9 @@ const styles = {
     cardRoot: {
         backgroundColor: "#EDEDED",
         borderRadius: 2,
-        overflowY: "auto"
+        overflow: "auto",
+        maxHeight: "100%",
+        height: "100%"
     },
     titleText: {
         fontWeight: 700,
@@ -53,52 +55,50 @@ function Involvements() {
 
     const renderCard = (title, body, imgUrl, linkUrl, hasLearnMore) => {
         return (
-            <div>
-                <Card sx={styles.cardRoot}>
-                    <Grid container direction={"column"}>
-                        <Grid item>
-                            <CardContent>
-                                <Box
-                                    component="img"
-                                    src={imgUrl}
-                                    sx={{width: "90%"}}
-                                    mx={"5%"}
-                                />
-                            </CardContent>
-                        </Grid>
-                        <Grid item>
-                            <CardContent>
-                                <Typography sx={styles.titleText}>{title}</Typography>
-                            </CardContent>
-                        </Grid>
-                        <Grid item>
-                            <CardContent>
-                                <Typography sx={styles.bodyText}>{body}</Typography>
-                            </CardContent>
-                        </Grid>
-                        <Grid item mx={2} my={2}>
-                            <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"}>
-                                {linkUrl ?
-                                    <Grid item>
-                                        <CardContent>
-                                            <Button sx={styles.buttonStyle} href={linkUrl}>Visit {title}</Button>
-                                        </CardContent>
-                                    </Grid> : <div></div>
-                                }
-                                {hasLearnMore ?
-                                    <Grid item>
-                                        <Button>Learn More</Button>
-                                    </Grid> :
-                                    <Grid item>
-                                        <Button disabled>Learn More</Button>
-                                    </Grid>
-                                }
-                            </Grid>
+            <Card sx={styles.cardRoot}>
+                <Grid container direction={"column"} sx={{display: "flex"}}>
+                    <Grid item>
+                        <CardContent>
+                            <Box
+                                component="img"
+                                src={imgUrl}
+                                sx={{width: "90%"}}
+                                mx={"5%"}
+                            />
+                        </CardContent>
+                    </Grid>
+                    <Grid item>
+                        <CardContent>
+                            <Typography sx={styles.titleText}>{title}</Typography>
+                        </CardContent>
+                    </Grid>
+                    <Grid item>
+                        <CardContent>
+                            <Typography sx={styles.bodyText}>{body}</Typography>
+                        </CardContent>
+                    </Grid>
+                    <Grid item mx={2} my={2} justifyContent={"flex-end"}>
+                        <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"}>
+                            {linkUrl ?
+                                <Grid item>
+                                    <CardContent>
+                                        <Button sx={styles.buttonStyle} href={linkUrl}>Visit {title}</Button>
+                                    </CardContent>
+                                </Grid> : <div></div>
+                            }
+                            {hasLearnMore ?
+                                <Grid item>
+                                    <Button>Learn More</Button>
+                                </Grid> :
+                                <Grid item>
+                                    <Button disabled>Learn More</Button>
+                                </Grid>
+                            }
                         </Grid>
                     </Grid>
-                </Card>
-            </div>
-        )
+                </Grid>
+            </Card>
+        );
     }
 
     return (
@@ -109,7 +109,7 @@ function Involvements() {
                 </Grid>
                 <Grid item>
                     {isBrowser ?
-                        <Grid container direction={"row"} spacing={2} mx={4}>
+                        <Grid container direction={"row"} spacing={2} mx={4} sx={{maxHeight: "100%", height: "100%"}}>
                             {
                                 data.involvements.map((involvement) => {
                                     return (
@@ -122,7 +122,7 @@ function Involvements() {
                                 })
                             }
                         </Grid> :
-                        <Grid container direction={"row"} spacing={2}>
+                        <Grid container direction={"row"} spacing={2} sx={{maxHeight: "100%", height: "100%"}}>
                             {
                                 data.involvements.map((involvement) => {
                                     return (
