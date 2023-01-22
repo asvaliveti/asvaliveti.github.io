@@ -15,6 +15,13 @@
       "hasLearnMore": false
     },
     {
+      "title": "Average Warriors Fan",
+      "body": "Average Warriors Fan is a chatbot built upon TensorFlow, NLTK, Scikit Learn, and Numpy is an extremely basic chatbot that is capable of basic conversation. Eventually as the project continues to be built, it will develop the personality of a fan of the Golden State Warriors. A simple front-end UI is under construction, but the open source code is available to view on my GitHub.",
+      "imgUrl": "https://freesvg.org/img/1538298822.png",
+      "linkUrl": "https://github.com/asvaliveti/AverageWarriorsFan",
+      "hasLearnMore": false
+    },
+    {
       "title": "RoboLoCo",
       "body": "Although I wasn't able to join the team until my last year of high-school, I became a part of the leadership team as the co-lead in a software role. What began by just recruiting and mentoring 80+ new students in the off-season, grew into competing at a high level in the chesapeake district of the FIRST Robotics Competition (FRC). Throughout the phase of the competitions, RoboLoCo was able to win the Engineering Inspiration award at the 2022 district championships qualifying us for the world championship in Houston, TX.",
       "imgUrl" : "https://www.lcps.org/cms/lib/VA01000195/Centricity/Domain/29793/IMG_8010.JPG",
