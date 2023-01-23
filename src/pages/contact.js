@@ -67,7 +67,7 @@ function Contact() {
         return (
             <Grid container direction={"column"} alignItems={"center"} justifyContent={"center"} spacing={2} mt={4}>
                 { renderTypography() }
-                <Grid item>
+                <Grid item xs>
                     <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"} spacing={2}>
                         <Grid item>
                             <TextField
@@ -91,7 +91,7 @@ function Contact() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item sx={{width: "80%"}}>
                     <TextField
                         label="Message"
                         variant="outlined"
