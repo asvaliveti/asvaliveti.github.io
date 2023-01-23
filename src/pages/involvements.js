@@ -133,19 +133,26 @@ function Involvements() {
                             <Grid item sx={styles.githubRoot} mt={2} mx={6} px={2} pb={2}>
                                 <GithubContributions username="asvaliveti"/>
                             </Grid>
-                        </Grid>:
-                        <Grid container direction={"row"} spacing={2} sx={{maxHeight: "100%", height: "100%"}}>
-                            {
-                                data.involvements.map((involvement) => {
-                                    return (
-                                        <Grow in={true}>
-                                            <Grid item xs={12}>
-                                                {renderCard(involvement.title, involvement.body, involvement.imgUrl, involvement.linkUrl)}
-                                            </Grid>
-                                        </Grow>
-                                    )
-                                })
-                            }
+                        </Grid> :
+                        <Grid container direction={"column"}>
+                            <Grid item>
+                                <Grid container direction={"row"} spacing={2} sx={{maxHeight: "100%", height: "100%"}}>
+                                    {
+                                        data.involvements.map((involvement) => {
+                                            return (
+                                                <Grow in={true}>
+                                                    <Grid item xs={12} mx={1}>
+                                                        {renderCard(involvement.title, involvement.body, involvement.imgUrl, involvement.linkUrl)}
+                                                    </Grid>
+                                                </Grow>
+                                            )
+                                        })
+                                    }
+                                </Grid>
+                            </Grid>
+                            <Grid item sx={styles.githubRoot} mt={2} mx={1} px={2} pb={2}>
+                                <GithubContributions username="asvaliveti"/>
+                            </Grid>
                         </Grid>
                     }
                 </Grid>
