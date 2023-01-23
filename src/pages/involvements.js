@@ -3,6 +3,7 @@ import {Button, Grid, Box, Card, CardContent, Typography} from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
 import { isBrowser } from 'react-device-detect';
+import { GithubContributions } from "react-github-graph"
 const data = require("../involvementsData/data.json");
 
 const styles = {
@@ -35,6 +36,10 @@ const styles = {
         fontSize: 30,
         fontWeight: 700
     },
+    githubRoot: {
+        backgroundColor: "#EDEDED",
+        borderRadius: 2
+    }
 }
 
 
@@ -109,19 +114,26 @@ function Involvements() {
                 </Grid>
                 <Grid item>
                     {isBrowser ?
-                        <Grid container direction={"row"} spacing={2} mx={4} sx={{maxHeight: "100%", height: "100%"}}>
-                            {
-                                data.involvements.map((involvement) => {
-                                    return (
-                                        <Grow in={true}>
-                                            <Grid item xs={3.75}>
-                                                {renderCard(involvement.title, involvement.body, involvement.imgUrl, involvement.linkUrl)}
-                                            </Grid>
-                                        </Grow>
-                                    )
-                                })
-                            }
-                        </Grid> :
+                        <Grid container direction={"column"}>
+                            <Grid item>
+                                <Grid container direction={"row"} spacing={2} mx={4} sx={{maxHeight: "100%", height: "100%"}}>
+                                    {
+                                        data.involvements.map((involvement) => {
+                                            return (
+                                                <Grow in={true}>
+                                                    <Grid item xs={3.75}>
+                                                        {renderCard(involvement.title, involvement.body, involvement.imgUrl, involvement.linkUrl)}
+                                                    </Grid>
+                                                </Grow>
+                                            );
+                                        })
+                                    }
+                                </Grid>
+                            </Grid>
+                            <Grid item sx={styles.githubRoot} mt={2} mx={6} px={2} pb={2}>
+                                <GithubContributions username="asvaliveti"/>
+                            </Grid>
+                        </Grid>:
                         <Grid container direction={"row"} spacing={2} sx={{maxHeight: "100%", height: "100%"}}>
                             {
                                 data.involvements.map((involvement) => {
