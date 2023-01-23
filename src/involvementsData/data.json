@@ -9,7 +9,7 @@
     },
     {
       "title": "Wisconsin Autonomous",
-      "body": "As a part of the AutoDrive Challenge Series II developing a level 4 autonomous vehicle, Wisconsin Autonomous is focussed on converting a standard Chevy Bolt EUV into a fully autonomous vehicle capable of avoiding obstacles. At my short time so far, I implemented ROS2 into autonomous vehicle structure to integrate components through the vehicle, ensuring that path planning and rerouting can be done at will. Additionally, I developed high-level and low-level path planning and path following algorithms and implemented them into a Chevrolet Bolt EUV.",
+      "body": "Wisconsin Autonomous is a student-driven organization at the University of Wisconsin - Madison working on generating new technology through several competitions centered around automation. Currently, Wisconsin Autonomous is competing in the AutoDrive Challenge II hosted by SAE International at the University of Michigan with aspirations of creating an L4 autonomous vehicle in the coming years. On the controls subteam, I have used libraries such as ROS2 to create a high-level planner that works along with mid-level planners and a controller to ensure the accurate path-planning of the Chevrolet EUV.",
       "imgUrl" : "https://wa.wisc.edu/wp-content/uploads/2022/03/Screen-Shot-2022-03-08-at-1.39.09-PM.png",
       "linkUrl": "https://wa.wisc.edu/",
       "hasLearnMore": false
