@@ -114,7 +114,7 @@ function Contact() {
             <Grid container direction={"column"} alignItems={"center"} justifyContent={"center"} spacing={6} mt={4}>
                 { renderTypography() }
                 <Grid item sx={{width: "40%"}}>
-                    <Grid container direction={"row"} justifyContent={"space-between"}>
+                    <Grid container direction={"row"} spacing={6}>
                         <Grid item>
                             <TextField
                                 id={"Name"}
