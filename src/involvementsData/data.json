@@ -34,6 +34,13 @@
       "imgUrl" : "https://phoenix4533.org/images/phoenix-logo.jpg",
       "linkUrl": "https://phoenix4533.org/index.html",
       "hasLearnMore": false
+    },
+    {
+      "title": "Text Spam Bot",
+      "body": "A simple GUI created using wxPython to enjoy spamming your friends phones! Right now, as it is built upon applescript, it only works on mac devices. In the future, I plan to expand to other OS systems and add the ability to automatically fill out song lyrics into the UI to easily send to your friends.",
+      "imgUrl": "https://www.bark.us/wp-content/uploads/2021/07/how_to_stop_spam_blog_post_blog_Header.png",
+      "linkUrl": "https://github.com/asvaliveti/SpamTexts",
+      "hasLearnMore": false
     }
   ]
 }
