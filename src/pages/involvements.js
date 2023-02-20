@@ -130,9 +130,9 @@ function Involvements() {
                                     }
                                 </Grid>
                             </Grid>
-                            <Grid item sx={styles.githubRoot} mt={2} mx={6} px={2} pb={2}>
-                                <GithubContributions username="asvaliveti"/>
-                            </Grid>
+                            {/*<Grid item sx={styles.githubRoot} mt={2} mx={6} px={2} pb={2}>*/}
+                            {/*    <GithubContributions username="asvaliveti"/>*/}
+                            {/*</Grid>*/}
                         </Grid> :
                         <Grid container direction={"column"}>
                             <Grid item>
