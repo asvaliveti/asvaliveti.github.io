@@ -14,7 +14,7 @@ const styles = {
     buttonStyle: {
         backgroundColor: "#DA0037",
         color: "#EDEDED",
-        borderRadius: 10,
+        borderRadius: 4,
         '&:hover': {
             backgroundColor: '#DA0037',
             color: '#EDEDED',
