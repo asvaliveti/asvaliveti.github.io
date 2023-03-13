@@ -40,12 +40,13 @@ function Home() {
                             <Typewriter
                                 options={{
                                     strings: ['Hello, My name is Anirudh!👋',
-                                        "Born in India🇮🇳, but lived in Germany🇩🇪, Russia🇷🇺, Ukraine🇺🇦, and the US🇺🇸",
+                                        "Born in India 🇮🇳, but lived in Germany 🇩🇪, Russia 🇷🇺, Ukraine 🇺🇦, and the US 🇺🇸",
                                         "Be sure to reach out!"],
                                     autoStart: true,
                                     loop: true,
                                     deleteSpeed: 15,
                                     pauseFor: 1500,
+                                    delay: 5,
                                     stringSplitter
                                 }}
                             />
@@ -53,7 +54,7 @@ function Home() {
                     </Grid>
                     <Grid item xs={12} mt={2}>
                         <Slide direction={"down"} in={true}>
-                            <Typography sx={styles.subTitle} align={"center"}>Computer Science student @ UW-Madison</Typography>
+                            <Typography sx={styles.subTitle} align={"center"}>Computer Science and Data Science student @ UW-Madison</Typography>
                         </Slide>
                     </Grid>
                 </Grid>
