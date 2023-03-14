@@ -16,7 +16,7 @@
     },
     {
       "title": "Average Warriors Fan",
-      "body": "Average Warriors Fan is a chatbot built upon TensorFlow, NLTK, Scikit Learn, and Numpy is an extremely basic chatbot that is capable of basic conversation. Eventually as the project continues to be built, it will develop the personality of a fan of the Golden State Warriors. A simple front-end UI is under construction, but the open source code is available to view on my GitHub.",
+      "body": "Average Warriors Fan is a chat-bot built upon TensorFlow, NLTK, Scikit Learn, and Numpy is a basic chatbot that is capable of basic conversation. The AI has been trained on sayings that an average warrriors fan would say, but the sample of training data is still small and being added to. Additionally, the AI can recognize when the user is requesting the opinion of a real fan and search twitter for a real fans take. A simple front-end UI is under construction, but the open source code is available to view on my GitHub.",
       "imgUrl": "https://freesvg.org/img/1538298822.png",
       "linkUrl": "https://github.com/asvaliveti/AverageWarriorsFan",
       "hasLearnMore": false
@@ -38,7 +38,7 @@
     {
       "title": "Text Spam Bot",
       "body": "A simple GUI created using wxPython to enjoy spamming your friends phones! Right now, as it is built upon applescript, it only works on mac devices. In the future, I plan to expand to other OS systems and add the ability to automatically fill out song lyrics into the UI to easily send to your friends.",
-      "imgUrl": "https://www.bark.us/wp-content/uploads/2021/07/how_to_stop_spam_blog_post_blog_Header.png",
+      "imgUrl": "https://img.gadgethacks.com/img/16/96/63552000653592/0/prank-your-apple-friends-with-1-000s-imessages-just-one-click.w1456.jpg",
       "linkUrl": "https://github.com/asvaliveti/SpamTexts",
       "hasLearnMore": false
     }

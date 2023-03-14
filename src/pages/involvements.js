@@ -61,7 +61,7 @@ function Involvements() {
     const renderCard = (title, body, imgUrl, linkUrl, hasLearnMore) => {
         return (
             <Card sx={styles.cardRoot}>
-                <Grid container direction={"column"} sx={{display: "flex"}}>
+                <Grid container direction={"column"} sx={{display: "flex", height: "100%"}}>
                     <Grid item>
                         <CardContent>
                             <Box
@@ -82,24 +82,26 @@ function Involvements() {
                             <Typography sx={styles.bodyText}>{body}</Typography>
                         </CardContent>
                     </Grid>
-                    <Grid item mx={2} my={2} justifyContent={"flex-end"}>
-                        <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"}>
-                            {linkUrl ?
-                                <Grid item>
-                                    <CardContent>
-                                        <Button sx={styles.buttonStyle} href={linkUrl}>Visit {title}</Button>
-                                    </CardContent>
-                                </Grid> : <div></div>
-                            }
-                            {hasLearnMore ?
-                                <Grid item>
-                                    <Button>Learn More</Button>
-                                </Grid> :
-                                <Grid item>
-                                    <Button disabled>Learn More</Button>
-                                </Grid>
-                            }
-                        </Grid>
+                    <Grid item mx={2} my={2}>
+                        <Box display="flex" justifyContent="flex-end">
+                            <Grid container direction={"row"} justifyContent={"center"} alignItems={"center"}>
+                                {linkUrl ?
+                                    <Grid item>
+                                        <CardContent>
+                                            <Button sx={styles.buttonStyle} href={linkUrl}>Visit {title}</Button>
+                                        </CardContent>
+                                    </Grid> : <div></div>
+                                }
+                                {hasLearnMore ?
+                                    <Grid item>
+                                        <Button>Learn More</Button>
+                                    </Grid> :
+                                    <Grid item>
+                                        <Button disabled>Learn More</Button>
+                                    </Grid>
+                                }
+                            </Grid>
+                        </Box>
                     </Grid>
                 </Grid>
             </Card>
