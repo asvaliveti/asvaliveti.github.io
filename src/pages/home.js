@@ -45,7 +45,7 @@ function Home() {
                                     autoStart: true,
                                     loop: true,
                                     deleteSpeed: 15,
-                                    pauseFor: 1500,
+                                    pauseFor: 2000,
                                     delay: 5,
                                     stringSplitter
                                 }}
