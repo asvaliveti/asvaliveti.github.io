@@ -4,7 +4,7 @@ import Slide from '@mui/material/Slide';
 import Grow from '@mui/material/Grow'
 import Typewriter from "typewriter-effect";
 import GraphemeSplitter from "grapheme-splitter";
-
+import Desk from "../widgets/desk";
 
 const styles = {
     titleText: {
@@ -33,32 +33,39 @@ function Home() {
 
     return (
         <div>
-            <Grow in={true}>
-                <Grid container sx={{height: "100%", width: "100%"}} alignItems={"center"} justifyContent={"center"}>
-                    <Grid item xs={12} mt={25}>
-                        <Typography sx={styles.titleText} align={"center"}>
-                            <Typewriter
-                                options={{
-                                    strings: ['Hello, My name is Anirudh!👋',
-                                        "Born in India 🇮🇳, but lived in Germany 🇩🇪, Russia 🇷🇺, Ukraine 🇺🇦, and the US 🇺🇸",
-                                        "Be sure to reach out!"],
-                                    autoStart: true,
-                                    loop: true,
-                                    deleteSpeed: 15,
-                                    pauseFor: 2000,
-                                    delay: 5,
-                                    stringSplitter
-                                }}
-                            />
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12} mt={2}>
-                        <Slide direction={"down"} in={true}>
-                            <Typography sx={styles.subTitle} align={"center"}>Computer Science and Data Science student @ UW-Madison</Typography>
-                        </Slide>
-                    </Grid>
+            <Grid container direction={"row"}>
+                <Grid item>
+                    <Grow in={true}>
+                        <Grid container sx={{height: "100%", width: "100%"}} alignItems={"center"} justifyContent={"center"}>
+                            <Grid item xs={12} mt={25}>
+                                <Typography sx={styles.titleText} align={"center"}>
+                                    {/*<Typewriter*/}
+                                    {/*    options={{*/}
+                                    {/*        strings: ['Hello, My name is Anirudh!👋',*/}
+                                    {/*            "Born in India 🇮🇳, but lived in Germany 🇩🇪, Russia 🇷🇺, Ukraine 🇺🇦, and the US 🇺🇸",*/}
+                                    {/*            "Be sure to reach out!"],*/}
+                                    {/*        autoStart: true,*/}
+                                    {/*        loop: true,*/}
+                                    {/*        deleteSpeed: 15,*/}
+                                    {/*        pauseFor: 2000,*/}
+                                    {/*        delay: 5,*/}
+                                    {/*        stringSplitter*/}
+                                    {/*    }}*/}
+                                    {/*/>*/}
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={12} mt={2}>
+                                <Slide direction={"down"} in={true}>
+                                    <Typography sx={styles.subTitle} align={"center"}>Computer Science and Data Science student @ UW-Madison</Typography>
+                                </Slide>
+                            </Grid>
+                        </Grid>
+                    </Grow>
                 </Grid>
-            </Grow>
+                <Grid item>
+                    <Desk />
+                </Grid>
+            </Grid>
         </div>
     );
 }
