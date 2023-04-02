@@ -1,8 +1,7 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import { db } from "../firebase";
-import { ref, set } from "firebase/database";
+const { PythonShell } = require('python-shell');
 
 class Chatbot extends React.Component {
     constructor(props) {
@@ -14,12 +13,34 @@ class Chatbot extends React.Component {
         };
     }
 
+    // initChatbotPy() {
+    //     PythonShell.run('../AverageWarriorsFan/chatbot.py', null).then((messages) => {
+    //         console.log('finished');
+    //     });
+    // }
+    //
+    // sendMessagePy(text) {
+    //     let pyshell = new PythonShell('../AverageWarriorsFan/startConversation.py');
+    //     pyshell.send(text);
+    //     pyshell.on('message', function (message) {
+    //         // received a message sent from the Python script (a simple "print" statement)
+    //         console.log(message);
+    //     });
+    //
+    //     pyshell.end(function (err,code,signal) {
+    //         if (err) throw err;
+    //         console.log('The exit code was: ' + code);
+    //         console.log('The exit signal was: ' + signal);
+    //         console.log('finished');
+    //     });
+    // }
+
+    componentDidMount() {
+        // this.initChatbotPy()
+    }
+
     handleSendMessage = () => {
-        let jsonObj = {
-            "message": this.state.mostRecentMessage,
-            "timestamp": Date.now()
-        }
-        set(ref(db, 'inputMessages'), jsonObj);
+        // this.sendMessagePy(this.state.mostRecentMessage);
     }
 
     handleMessageChange = (e) => {

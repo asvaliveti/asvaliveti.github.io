@@ -3,7 +3,6 @@ import {Button, Grid, Box, Card, CardContent, Typography} from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
 import { isBrowser } from 'react-device-detect';
-import { GithubContributions } from "react-github-graph"
 const data = require("../involvementsData/data.json");
 
 const styles = {
