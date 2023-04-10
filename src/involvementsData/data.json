@@ -18,7 +18,7 @@
       "title": "Average Warriors Fan",
       "body": "Average Warriors Fan is a chat-bot built upon TensorFlow, NLTK, Scikit Learn, and Numpy is a basic chatbot that is capable of basic conversation. The AI has been trained on sayings that an average warrriors fan would say, but the sample of training data is still small and being added to. Additionally, the AI can recognize when the user is requesting the opinion of a real fan and search twitter for a real fans take. A simple front-end UI is under construction, but the open source code is available to view on my GitHub.",
       "imgUrl": "https://freesvg.org/img/1538298822.png",
-      "linkUrl": "https://github.com/asvaliveti/AverageWarriorsFan",
+      "linkUrl": "asvaliveti.github.io/AverageWarriorsFan",
       "hasLearnMore": false
     },
     {
