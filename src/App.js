@@ -62,9 +62,9 @@ function App() {
                   </Button>
                 </Grid>
                 <Grid item>
-                    <Button onClick={() => navigate('/contact')}>
+                    <Button onClick={() => navigate('/AverageWarriorsFan')}>
                         <Typography sx={styles.appBarText} >
-                            Contact
+                            Chat
                         </Typography>
                     </Button>
                 </Grid>
