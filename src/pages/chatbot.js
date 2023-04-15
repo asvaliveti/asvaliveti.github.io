@@ -1,7 +1,6 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-import axios from "axios";
 
 class Chatbot extends React.Component {
     constructor(props) {
@@ -15,18 +14,16 @@ class Chatbot extends React.Component {
     }
 
     handleSendMessage = async () => {
-        axios.default.baseUrl = ''
-        const config = {
+        const fetchPromise = fetch('https://average-warriors-fan.herokuapp.com/message', {
+            method: 'POST',
+            mode: 'cors',
             headers: {
-                'Access-Control-Allow-Origin': 'https://average-warriors-fan.herokuapp.com/',
-                'Access-Control-Allow-Methods': "GET, PUT, POST, DELETE, HEAD, OPTIONS",
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
             },
-            body: {
-                message: this.state.message
-            }
-        };
-        axios.get('https://asvaliveti.github.io/message', config)
-            .then(response => this.setState({ totalReactPackages: response.data.total }));
+            body: {message: this.state.messages}
+        });
+        console.log(fetchPromise)
     }
 
     handleMessageChange = (e) => {
