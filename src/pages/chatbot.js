@@ -1,6 +1,8 @@
 import React from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography'
+import Modal from '@mui/material/Modal'
 
 class Chatbot extends React.Component {
     constructor(props) {
@@ -10,20 +12,27 @@ class Chatbot extends React.Component {
             messages: [],
             message: "",
             avgWarriorsFanResponse: "",
+            open: true
         };
     }
 
     handleSendMessage = async () => {
-        const fetchPromise = fetch('https://average-warriors-fan.herokuapp.com/message', {
+        fetch('http://localhost:4000/message', {
             method: 'POST',
-            mode: 'cors',
             headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+                'Content-Type': 'application/json'
             },
-            body: {message: this.state.messages}
-        });
-        console.log(fetchPromise)
+            body: JSON.stringify({
+                message: this.state.message
+            })
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error(error))
+    }
+
+    handleModalChange = () => {
+        this.setState({open: false})
     }
 
     handleMessageChange = (e) => {
@@ -33,6 +42,17 @@ class Chatbot extends React.Component {
     render() {
         return (
             <div>
+                <Modal
+                    open={this.state.open}
+                    onClose={this.handleModalChange}
+                    closeAfterTransition
+                    BackdropProps={{
+                        timeout: 500,
+                    }}
+                    sx={{backgroundColor: "#FFFFFF", align: "center", borderRadius: 10, margin: "50px"}}
+                >
+                    <Typography mt={30} sx={{textAlign: "center"}}>This page is still under development!</Typography>
+                </Modal>
                 <div>
                     {this.state.messages.map((message, index) => (
                         <div key={index}>
