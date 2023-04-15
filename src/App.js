@@ -61,6 +61,13 @@ function App() {
                       </Typography>
                   </Button>
                 </Grid>
+                <Grid item>
+                    <Button onClick={() => navigate('/contact')}>
+                        <Typography sx={styles.appBarText} >
+                            Contact
+                        </Typography>
+                    </Button>
+                </Grid>
               </Grid>
             </AppBar>
           </Grid>
