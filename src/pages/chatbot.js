@@ -1,79 +1,134 @@
-import React from 'react';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography'
-import Modal from '@mui/material/Modal'
+import React, { useState, useEffect, useRef } from "react";
+import { styled } from "@mui/system";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
+import { grey } from "@mui/material/colors";
+import Avatar from "@mui/material/Avatar";
+import fanPic from "../icons/fan.jpeg";
+import warriorsFanPic from "../icons/warriorsFan.jpeg";
+import {Grid} from "@mui/material";
+import axios from "axios";
 
-class Chatbot extends React.Component {
-    constructor(props) {
-        super(props);
+const ChatBotWrapper = styled("div")({
+    display: "flex",
+    flexDirection: "column",
+    height: "90vh",
+    width: "90vw",
+    margin: "auto",
+    backgroundColor: "#6F7378",
+    borderRadius: 8,
+    boxShadow: "0px 2px 8px rgba(0, 0, 0, 0.15)",
+    overflowY: "auto"
+});
 
-        this.state = {
-            messages: [],
-            message: "",
-            avgWarriorsFanResponse: "",
-            open: true
-        };
-    }
+const ChatBubbleWrapper = styled("div")({
+    display: "flex",
+    marginTop: "20px",
+    marginBottom: "20px",
+    marginLeft: "20px",
+    marginRight: "20px"
+});
 
-    handleSendMessage = async () => {
-        fetch('http://localhost:4000/message', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                message: this.state.message
-            })
-        })
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error(error))
-    }
+const ChatBubble = styled("div")(({ theme }) => ({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: grey[300],
+    borderRadius: "16px",
+    padding: "8px 16px",
+    margin: "0 10px",
+    fontSize: "16px",
+    fontWeight: 500,
+    maxWidth: "60%",
+    wordWrap: "break-word",
+    whiteSpace: "pre-wrap",
+    lineHeight: "1.5",
+    [theme.breakpoints.up("sm")]: {
+        fontSize: "18px",
+    },
+}));
 
-    handleModalChange = () => {
-        this.setState({open: false})
-    }
+const Chatbot = () => {
+    const [messages, setMessages] = useState([
+        {
+            message: "Hi there! How can I help you today?",
+            sender: "bot",
+        },
+    ]);
+    const [inputValue, setInputValue] = useState("");
+    const messageEndRef = useRef(null);
 
-    handleMessageChange = (e) => {
-        this.setState({message: e.target.value})
-    }
+    const handleInputChange = (event) => {
+        setInputValue(event.target.value);
+    };
 
-    render() {
-        return (
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+        if (inputValue.trim()) {
+            setMessages([
+                ...messages,
+                {message: inputValue, sender: "user"},
+                {message: "This feature is not available yet", sender: "bot"}
+            ]);
+            setInputValue("");
+        }
+    };
+
+    useEffect(() => {
+        messageEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }, [messages]);
+
+    return (
+        <ChatBotWrapper>
             <div>
-                <Modal
-                    open={this.state.open}
-                    onClose={this.handleModalChange}
-                    closeAfterTransition
-                    BackdropProps={{
-                        timeout: 500,
-                    }}
-                    sx={{backgroundColor: "#FFFFFF", align: "center", borderRadius: 10, margin: "50px"}}
-                >
-                    <Typography mt={30} sx={{textAlign: "center"}}>This page is still under development!</Typography>
-                </Modal>
-                <div>
-                    {this.state.messages.map((message, index) => (
-                        <div key={index}>
-                            {message.text}
-                        </div>
-                    ))}
-                </div>
-                <div>
-                    <TextField
-                        id="message-input"
-                        label="Message"
-                        margin="normal"
-                        onChange={(e) => this.handleMessageChange(e)}
-                    />
-                    <Button variant="contained" onClick={this.handleSendMessage}>
-                        Send
-                    </Button>
-                </div>
+                {messages.map((message, index) => (
+                    <div key={index}>
+                        {message.sender === "bot" && (
+                            <ChatBubbleWrapper>
+                                <Avatar src={warriorsFanPic} />
+                                <ChatBubble>{message.message}</ChatBubble>
+                            </ChatBubbleWrapper>
+                        )}
+                        {message.sender === "user" && (
+                            <ChatBubbleWrapper style={{ justifyContent: "flex-end" }}>
+                                <ChatBubble>{message.message}</ChatBubble>
+                                <Avatar src={fanPic}/>
+                            </ChatBubbleWrapper>
+                        )}
+                    </div>
+                ))}
+                <div ref={messageEndRef}></div>
             </div>
-        );
-    }
-}
+            <form onSubmit={handleFormSubmit} >
+                <Grid container spacing={2} m={1}>
+                    <Grid item xs={10}>
+                        <TextField
+                            label="Type your message here"
+                            variant="outlined"
+                            value={inputValue}
+                            fullWidth
+                            onChange={handleInputChange}
+                            sx={{ marginTop: "auto", marginBottom: "10px", backgroundColor: grey[300], borderRadius: 3 }}
+                        />
+                    </Grid>
+                    <Grid item xs={2}>
+                        <Button
+                            variant="contained"
+                            endIcon={<SendIcon />}
+                            type="submit"
+                            sx={{
+                                backgroundColor: "#DA0017",
+                                borderRadius: 4
+                            }}
+                        >
+                            Send
+                        </Button>
+                    </Grid>
+                </Grid>
+            </form>
+        </ChatBotWrapper>
+    );
+};
 
 export default Chatbot;
