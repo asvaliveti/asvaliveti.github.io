@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/static/js/main.b8a3a1ff.js",
+    "main.js": "/static/js/main.67d643ee.js",
     "static/media/warriorsFan.jpeg": "/static/media/warriorsFan.8940b458d656305f40c0.jpeg",
     "static/media/fan.jpeg": "/static/media/fan.7ad31a71eb7470cf23ac.jpeg",
     "index.html": "/index.html",
-    "main.b8a3a1ff.js.map": "/static/js/main.b8a3a1ff.js.map"
+    "main.67d643ee.js.map": "/static/js/main.67d643ee.js.map"
   },
   "entrypoints": [
-    "static/js/main.b8a3a1ff.js"
+    "static/js/main.67d643ee.js"
   ]
 }
