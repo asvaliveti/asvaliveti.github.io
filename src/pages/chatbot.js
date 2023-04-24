@@ -69,10 +69,18 @@ const Chatbot = () => {
             setMessages([
                 ...messages,
                 {message: inputValue, sender: "user"},
-                {message: "This feature is not available yet", sender: "bot"}
             ]);
             setInputValue("");
         }
+        const senderMessage = {message: inputValue}
+        const res = await axios.post(
+            "https://average-warriors-fan.herokuapp.com/test",
+            senderMessage
+        );
+        setMessages([
+            ...messages,
+            {message: res.data, sender: "bot"},
+        ]);
     };
 
     useEffect(() => {
