@@ -3,6 +3,8 @@ import {Button, Grid, Box, Card, CardContent, Typography} from "@mui/material";
 import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
 import { isBrowser } from 'react-device-detect';
+import warriorsFan from "../icons/warriorsFan.jpeg";
+
 const data = require("../involvementsData/data.json");
 
 const styles = {
@@ -65,7 +67,7 @@ function Involvements() {
                         <CardContent>
                             <Box
                                 component="img"
-                                src={imgUrl}
+                                src={imgUrl ? imgUrl : warriorsFan}
                                 sx={{width: "90%"}}
                                 mx={"5%"}
                             />
