@@ -2,21 +2,22 @@
   "involvements": [
     {
       "title": "Rugged Robotics",
-      "body": "Starting on May 15th I am joining Rugged Robotics in Houston, TX as a Robotics Software Intern working on their fleet of robots that aid with construction of buildings. Rugged Robotics is a upcoming small business that has recently obtained their series A funding to continue the work being done in construction automation. Throughout the 3 month internship process, I am excited to be working with leading ex-NASA engineers on new technology that revolutionizes the way we build.",
-      "imgUrl": "https://cybernetix.vc/wp-content/uploads/Jenni4_NYC_20.jpeg",
+      "body": "Rugged Robotics is a construction robotics company focussed on automating layout for commercial buildings and more. Based out of Houston, TX, over the course of my 3-month internship, I worked primarily on speeding up the pre-planning pipeline used to feed robot important data about what, where, and how to print. As a Robotics Software Intern, worked to enable the operations team to be more flexible altering and enhancing existing plans through the creation and development of various GUIs and structuring of projects.",
+      "imgUrl": "Rugged Robotics",
       "linkUrl": "https://www.rugged-robotics.com/",
       "hasLearnMore": false
     },
     {
       "title": "Wisconsin Autonomous",
       "body": "Wisconsin Autonomous is a student-driven organization at the University of Wisconsin - Madison working on generating new technology through several competitions centered around automation. Currently, Wisconsin Autonomous is competing in the AutoDrive Challenge II hosted by SAE International at the University of Michigan with aspirations of creating an L4 autonomous vehicle in the coming years. On the controls subteam, I have used libraries such as ROS2 to create a high-level planner that works along with mid-level planners and a controller to ensure the accurate path-planning of the Chevrolet EUV.",
-      "imgUrl" : "https://wa.wisc.edu/wp-content/uploads/2022/03/Screen-Shot-2022-03-08-at-1.39.09-PM.png",
+      "imgUrl" : "https://wa.wisc.edu/wp-content/uploads/sites/2047/2022/03/Screen-Shot-2022-03-08-at-1.39.09-PM.png",
       "linkUrl": "https://wa.wisc.edu/",
       "hasLearnMore": false
     },
     {
       "title": "Average Warriors Fan",
       "body": "Average Warriors Fan is a chat-bot built upon TensorFlow, NLTK, Scikit Learn, and Numpy is a basic chatbot that is capable of basic conversation. The satirical chatbot was built after receiving several comments about the blind praise of the Golden State Warriors team by their fans. The model is able to provide game day content in addition to twitter takes from real warriors fans.",
+      "imgUrl": "Warriors Fan",
       "linkUrl": "github.com/asvaliveti/AverageWarriorsFan",
       "hasLearnMore": false
     },

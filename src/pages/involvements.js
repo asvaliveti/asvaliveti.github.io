@@ -4,6 +4,7 @@ import Grow from '@mui/material/Grow';
 import Slide from '@mui/material/Slide';
 import { isBrowser } from 'react-device-detect';
 import warriorsFan from "../icons/warriorsFan.jpeg";
+import RuggedRobotics from "../icons/RuggedRobotics.png"
 
 const data = require("../involvementsData/data.json");
 
@@ -67,7 +68,9 @@ function Involvements() {
                         <CardContent>
                             <Box
                                 component="img"
-                                src={imgUrl ? imgUrl : warriorsFan}
+                                src={imgUrl === "Warriors Fan" ? warriorsFan :
+                                    imgUrl === "Rugged Robotics" ? RuggedRobotics :
+                                    imgUrl}
                                 sx={{width: "90%"}}
                                 mx={"5%"}
                             />
@@ -89,7 +92,7 @@ function Involvements() {
                                 {linkUrl ?
                                     <Grid item>
                                         <CardContent>
-                                            <Button sx={styles.buttonStyle} href={linkUrl}>Visit {title}</Button>
+                                            <Button sx={styles.buttonStyle} href={linkUrl} target={"_blank"}>Visit {title}</Button>
                                         </CardContent>
                                     </Grid> : <div></div>
                                 }
