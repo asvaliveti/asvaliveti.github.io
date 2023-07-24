@@ -5,6 +5,7 @@ import Contact from './pages/contact';
 import Involvements from "./pages/involvements";
 import {AppBar, Button, Grid, Typography, BottomNavigation } from "@mui/material";
 import Socials from "./widgets/socials";
+import Chatbot from './pages/chatbot';
 
 const styles = {
     modal: {
@@ -60,6 +61,13 @@ function App() {
                       </Typography>
                   </Button>
                 </Grid>
+                {/*<Grid item>*/}
+                {/*    <Button onClick={() => navigate('/AverageWarriorsFan')}>*/}
+                {/*        <Typography sx={styles.appBarText} >*/}
+                {/*            Chat*/}
+                {/*        </Typography>*/}
+                {/*    </Button>*/}
+                {/*</Grid>*/}
               </Grid>
             </AppBar>
           </Grid>
@@ -68,6 +76,7 @@ function App() {
               <Route path="/involvements" element={<Involvements />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/home" element={<Home />} />
+              {/*<Route path="/AverageWarriorsFan" element={<Chatbot />} />*/}
               <Route path="/" element={<Home />}>
                 <Route index element={<Home />} />
                 <Route path="*" element={<Home />} />
